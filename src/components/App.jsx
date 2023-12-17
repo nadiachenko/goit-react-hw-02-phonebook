@@ -11,7 +11,6 @@ export class App extends Component {
   }
 
   addContact = (name, number) => {
-    console.log(this.state.contacts);
     const contact = {
       id: shortid.generate(),
       name,
@@ -45,11 +44,9 @@ export class App extends Component {
     const filteredContacts = this.filterContacts();
     return (
       <>
-        <ContactForm onSubmit={this.addContact}
-        />
+        <ContactForm onSubmit={this.addContact} />
         <Filter value={this.state.filter} onChange={this.searchName} />
-        <ContactList contactsList={filteredContacts} deleteContact={this.deleteContact}
-        />
+        <ContactList contactsList={filteredContacts} deleteContact={this.deleteContact} />
       </>
     );
   }
